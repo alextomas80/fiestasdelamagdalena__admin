@@ -11,7 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "directus": "^11.4.1",
+    "axios": "^1.7.9",
+    "directus": "11.12",
     "mysql2": "^3.12.0"
   }
 }
