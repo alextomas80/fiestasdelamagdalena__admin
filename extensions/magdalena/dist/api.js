@@ -1,0 +1,1 @@
+const o=[{name:"send-notifications",config:({filter:o,action:e})=>{o("notifications.items.create",o=>{console.log({payload:o}),console.log("Notification created Item!")}),e("notifications.items.create",o=>{console.log({payload:o}),console.log("Item created!")})}}],e=[],t=[];export{e as endpoints,o as hooks,t as operations};

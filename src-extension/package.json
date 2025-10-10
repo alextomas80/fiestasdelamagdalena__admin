@@ -1,0 +1,36 @@
+{
+    "name": "magdalena",
+    "version": "1.0.0",
+    "type": "module",
+    "directus:extension": {
+        "host": "^10.1.10",
+        "type": "bundle",
+        "path": {
+            "app": "dist/app.js",
+            "api": "dist/api.js"
+        },
+        "entries": [
+            {
+                "type": "hook",
+                "name": "send-notifications",
+                "source": "src/send-notifications/index.js"
+            }
+        ]
+    },
+    "description": "Please enter a description for your extension",
+    "icon": "extension",
+    "keywords": [
+        "directus",
+        "directus-extension",
+        "directus-custom-bundle"
+    ],
+    "scripts": {
+        "build": "directus-extension build && npm run copy-to-extensions",
+        "dev": "directus-extension build -w --no-minify",
+        "copy-to-extensions": "rm -rf ../extensions/send-notifications && mkdir -p ../extensions/send-notifications && cp -r dist ../extensions/send-notifications/ && cp package.json ../extensions/send-notifications/",
+        "add": "directus-extension add"
+    },
+    "devDependencies": {
+        "@directus/extensions-sdk": "16.0.2"
+    }
+}
