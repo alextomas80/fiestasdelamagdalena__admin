@@ -6,11 +6,11 @@ interface Message {
 }
 
 export default ({ filter, action }, { database, logger }) => {
-  filter("notifications.items.update", () => {
+  filter("notifications.items.create", () => {
     console.log("📲 ¡Nueva notificación");
   });
 
-  action("notifications.items.update", async ({ payload }) => {
+  action("notifications.items.create", async ({ payload }) => {
     const EXPO_API_URL = "https://exp.host/--/api/v2/push/send";
     const { title, body } = payload;
 
