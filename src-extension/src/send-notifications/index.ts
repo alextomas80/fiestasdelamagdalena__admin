@@ -12,7 +12,8 @@ export default ({ filter, action }, { database, logger }) => {
 
   action("notifications.items.create", async ({ payload }) => {
     const EXPO_API_URL = "https://exp.host/--/api/v2/push/send";
-    const { title, body } = payload;
+    console.log({ payload });
+    const { title, body, type, event } = payload;
 
     try {
       // 🔹 1. Reset tokens
@@ -27,6 +28,7 @@ export default ({ filter, action }, { database, logger }) => {
         to,
         title,
         body,
+        data: { type, event },
         sound: "default",
       }));
 
